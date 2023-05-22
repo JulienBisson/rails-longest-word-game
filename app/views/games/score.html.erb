@@ -1,0 +1,17 @@
+<h1>Your score</h1>
+<div>
+Your word:
+    <%if @answer && @user['found']%>
+      Congratulation <%=@user['word'].upcase%> is a valid word !
+    <%else%>
+      Sorry, it's an invalid word
+    <%end%>
+</div>
+<div>
+Your score: <%if @user['found']%>
+      <%= @user['length']%>
+    <%else%>
+      0
+    <%end%>
+</div>
+<div><%= link_to "Play again", new_path %></div>
